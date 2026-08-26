@@ -1,0 +1,10 @@
+agora-agents==2.2.0
+agora_python_server_sdk @ git+https://github.com/AgoraIO-Extensions/Agora-Python-Server-SDK.git@e10e9db1233b027d8a2922c31b58f04f1dc6edd6#subdirectory=agora_rtc
+audioop-lts==0.2.2; python_version >= "3.13"
+fastapi==0.124.2
+google-genai>=2.20.0,<3
+httpx==0.28.1
+python-dotenv==1.2.1
+python-socks[asyncio]>=2.5.0
+websockets>=14,<17
+uvicorn[standard]==0.38.0

@@ -1,0 +1,46 @@
+{
+  "name": "agora-matchcast",
+  "version": "0.1.0",
+  "description": "Real-time captions for live sports and esports commentary with Agora and Gemini 3.5 Transcribe Live",
+  "license": "MIT",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "dev": "next dev --webpack",
+    "build": "next build",
+    "start": "next start",
+    "media-gateway:key": "node scripts/create-media-gateway-key.mjs",
+    "stream:sample": "node scripts/push-sample-rtmp.mjs",
+    "eval:transcription": "server/.venv/bin/python server/scripts/evaluate_transcription.py",
+    "lint": "eslint .",
+    "test:frontend": "tsx scripts/test-caption-payload.ts",
+    "test:video-overlay": "tsx scripts/test-video-overlay.ts",
+    "test:session-export": "tsx scripts/test-session-export.ts",
+    "test:transcribers": "tsx scripts/test-transcriber-provider.ts",
+    "test:transcriber-select": "tsx scripts/test-transcriber-select.tsx",
+    "typecheck": "tsc --noEmit",
+    "verify": "pnpm run lint && pnpm run test:frontend && pnpm run test:video-overlay && pnpm run test:session-export && pnpm run test:transcribers && pnpm run test:transcriber-select && pnpm run typecheck && pnpm run build"
+  },
+  "dependencies": {
+    "@radix-ui/react-select": "^2.3.7",
+    "agora-rtc-sdk-ng": "^4.24.3",
+    "agora-token": "^2.0.5",
+    "lucide-react": "^0.454.0",
+    "next": "^16.2.6",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.6",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "eslint": "^9.39.4",
+    "eslint-config-next": "^16.2.2",
+    "postcss": "^8.5.1",
+    "tailwindcss": "^3.4.17",
+    "tsx": "^4.20.6",
+    "typescript": "^5.7.3",
+    "typescript-eslint": "^8.58.1"
+  }
+}
